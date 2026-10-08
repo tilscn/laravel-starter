@@ -1,0 +1,29 @@
+{
+    "name": "tilscn/laravel-starter",
+    "description": "A Laravel package for various utilities and features.",
+    "require": {
+        "illuminate/support": "^12.0",
+        "illuminate/http": "^12.0",
+        "illuminate/validation": "^12.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Tilscn\\LaravelStarter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tilscn",
+            "email": "your.email@example.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tilscn\\LaravelStarter\\MyServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}
