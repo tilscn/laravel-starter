@@ -31,4 +31,8 @@ class AuthController
         return self::success(auth('api')->user());
     }
 
+    public function login2()
+    {
+        return abort(401, 'unauthorized');
+    }
 }
