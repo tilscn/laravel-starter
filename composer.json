@@ -21,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Tilscn\\LaravelStarter\\MyServiceProvider"
+                "Tilscn\\LaravelStarter\\StarterServiceProvider"
             ]
         }
     },
