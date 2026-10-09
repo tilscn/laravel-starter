@@ -12,6 +12,6 @@ Route::group([
 
     Route::get('login', [AuthController::class, 'login']);
     Route::get('me', [AuthController::class, 'me'])->middleware('auth:api');
-    Route::get('login2', [AuthController::class, 'login2'])->name('login');
+    Route::get('unauthorized', [AuthController::class, 'unauthorized'])->name('login');
 
 });
