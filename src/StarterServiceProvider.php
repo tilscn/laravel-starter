@@ -19,8 +19,6 @@ class StarterServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->publishes([
-            __DIR__ . '/../config/starter.php' => config_path('starter.php'),
-        ]);
+        $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
     }
 }
