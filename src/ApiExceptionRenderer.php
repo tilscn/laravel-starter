@@ -13,9 +13,9 @@ class ApiExceptionRenderer
     {
         if ($request->is('api/*') || $request->is('api')) {
             if ($e instanceof HttpException) {
-                ApiResponse::fail($e->getMessage(), $e->getStatusCode());
+                self::fail($e->getMessage(), $e->getStatusCode());
             } elseif ($e instanceof ValidationException) {
-                ApiResponse::fail($e->validator->errors()->first(), 422);
+                self::fail($e->validator->errors()->first(), 422);
             }
         }
     }
