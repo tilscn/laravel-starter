@@ -4,7 +4,7 @@ namespace Tilscn\LaravelStarter;
 
 use Illuminate\Support\ServiceProvider;
 
-class MyServiceProvider extends ServiceProvider
+class StarterServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -20,7 +20,7 @@ class MyServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../config/courier.php' => config_path('courier.php'),
+            __DIR__ . '/../config/starter.php' => config_path('starter.php'),
         ]);
     }
 }
