@@ -14,4 +14,13 @@ trait ApiResponse
             'data'    => $data,
         ], 200);
     }
+
+    function fail(string $msg = '', int $code = 400, $data = null): JsonResponse
+    {
+        return response()->json([
+            'code'    => $code,
+            'msg' => $msg,
+            'data'    => $data,
+        ], $code);
+    }
 }

@@ -7,23 +7,15 @@ use Illuminate\Validation\ValidationException;
 
 class ApiExceptionRenderer
 {
+    use ApiResponse;
+
     public static function render(\Throwable $e, Request $request)
     {
         if ($request->is('api/*') || $request->is('api')) {
             if ($e instanceof HttpException) {
-                $code = $e->getStatusCode();
-                
-                return response()->json([
-                    'code' => $code,
-                    'msg' => $e->getMessage(),
-                    'data' => null
-                ], $code);
+                ApiResponse::fail($e->getMessage(), $e->getStatusCode());
             } elseif ($e instanceof ValidationException) {
-                return response()->json([
-                    'code' => 422,
-                    'msg' => $e->validator->errors()->first(),
-                    'data' => null
-                ], 422);
+                ApiResponse::fail($e->validator->errors()->first(), 422);
             }
         }
     }
