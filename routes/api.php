@@ -10,7 +10,7 @@ Route::group([
 
 ], function ($router) {
 
-    Route::get('login', [AuthController::class, 'login']);
+    Route::post('login', [AuthController::class, 'login']);
     Route::get('me', [AuthController::class, 'me'])->middleware('auth:api');
     Route::get('unauthorized', [AuthController::class, 'unauthorized'])->name('login');
 

@@ -33,6 +33,6 @@ class AuthController
 
     public function unauthorized()
     {
-        return self::fail('unauthorized', 401);
+        return abort(401, 'unauthorized');
     }
 }
